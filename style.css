@@ -1,0 +1,69 @@
+:root {
+  --main-BG-clr: rgb(240, 255, 255);
+  --boreder1-clr: rgb(47, 47, 47);
+  --boreder2-clr: hsl(0, 0%, 0%);
+  --display-clr: rgb(178, 185, 183);
+  --btn1-clr: hsl(210, 100%, 56%);
+  --btn2-clr: hsl(30, 100%, 56%);
+  --btn3-clr: hsl(181, 58%, 31%);
+  --font-clr: hsl(0, 0%, 0%);
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: monospace;
+  color: var(var(--font-clr));
+}
+.wrapper {
+  height: 100vh;
+  height: 100dvh;
+  background-color: var(--main-BG-clr);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+main {
+  background-color: var(--boreder2-clr);
+  width: 30%;
+  aspect-ratio: 0.8;
+  border: 10px solid var(--boreder1-clr);
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+.display {
+  background-color: var(--display-clr);
+  grid-column: 1 / 5;
+  border: 5px solid var(--boreder2-clr);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-size: 5em;
+  font-weight: 500;
+  line-height: 0.6;
+  padding-inline: 4px;
+}
+.btnA,
+.btnB,
+.btnC {
+  border: none;
+  border-radius: 6px;
+  font-size: 1.7em;
+  cursor: pointer;
+}
+.btnA {
+  background-color: var(--btn1-clr);
+}
+.btnB {
+  background-color: var(--btn2-clr);
+}
+.btnC {
+  background-color: var(--btn3-clr);
+}
+.zerobtn {
+  grid-column: 1 / 3;
+}
