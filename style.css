@@ -4,8 +4,11 @@
   --boreder2-clr: hsl(0, 0%, 0%);
   --display-clr: rgb(178, 185, 183);
   --btn1-clr: hsl(210, 100%, 56%);
+  --btn1-clr-a: hsl(210, 100%, 76%);
   --btn2-clr: hsl(30, 100%, 56%);
+  --btn2-clr-a: hsl(30, 100%, 76%);
   --btn3-clr: hsl(181, 58%, 31%);
+  --btn3-clr-a: hsl(181, 58%, 51%);
   --font-clr: hsl(0, 0%, 0%);
 }
 * {
@@ -58,11 +61,17 @@ main {
 .btnA {
   background-color: var(--btn1-clr);
 }
+.btnA:active {
+  background-color: var(--btn1-clr-a);
+}
 .btnB {
   background-color: var(--btn2-clr);
 }
 .btnC {
   background-color: var(--btn3-clr);
+}
+.btnC:active {
+  background-color: var(--btn3-clr-a);
 }
 .zerobtn {
   grid-column: 1 / 3;
