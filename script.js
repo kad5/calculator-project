@@ -1,4 +1,3 @@
-const display = document.getElementById("display");
 const container = document.getElementById("container");
 
 let input = "0";
@@ -8,6 +7,7 @@ let op = null;
 let result = 0;
 
 function displayNum() {
+  const display = document.getElementById("display");
   display.textContent = input; // makes the display show my input value. it is zero by default
 }
 
@@ -111,4 +111,8 @@ function backtrack() {
     input = input.slice(0, -1);
     displayNum();
   }
+}
+
+function displayOpSing() {
+  const opDisplay = document.querySelector;
 }
