@@ -108,8 +108,10 @@ function chooseOpSign(opSign) {
 function backtrack() {
   if (input === "") {
     return;
-  }
-  if (input.length < 2) {
+  } else if (input.length === 2 && input[0] === "-") {
+    clearCalc();
+    return;
+  } else if (input.length < 2) {
     clearCalc();
   } else {
     input = input.slice(0, -1);
