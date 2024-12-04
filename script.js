@@ -63,7 +63,10 @@ function operate() {
       result = value1 - value2;
       break;
     case "/":
-      result = value1 / value2;
+      if (value2 === 0) {
+        clearCalc();
+        alert("you can't divide by Zero");
+      } else result = value1 / value2;
       break;
     case "*":
       result = value1 * value2;
