@@ -16,7 +16,11 @@ function modifyInput(num) {
     if (input.includes(".")) {
       return; //makes sure that only 1 decimal is allowed
     } else {
-      input = input + ".";
+      if (input === "") {
+        input = "0.";
+      } else {
+        input = input + ".";
+      }
       displayNum(); // adds the decimal while preserving the number before even if it was the default input 0
     }
   } else if (input == "0") {
