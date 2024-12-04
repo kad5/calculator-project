@@ -32,6 +32,7 @@ function modifyInput(num) {
     displayNum(); // adds to the string since the string is not the default zero
   }
 }
+
 function chooseSign() {
   if (input === "0") {
     return input === "0"; // checks first if the input is the default zero and denies adjusting the sign if so
@@ -43,75 +44,64 @@ function chooseSign() {
     displayNum(); // if there is a - then remove it
   }
 }
+modifyInput(7);
+chooseOpSign("+");
+modifyInput(7);
+chooseOpSign("+");
+useEqualSign();
+chooseOpSign("+");
+chooseOpSign("+");
+chooseOpSign("+");
+useEqualSign();
+
+console.log(value1);
 
 function chooseOpSign(opSign) {
-  console.log(op);
   if (op) {
-    op = opSign;
-    input = [value1];
-    operate();
-    op = opSign;
-    value1 = result;
-    console.log(value1);
-    console.log(input);
+    value1 = Number(input);
+    useEqualSign();
   } else {
-    value1 = Number(input.join(""));
-    value2 = Number(input.join(""));
-    input = [];
+    value1 = Number(input);
+    result = Number(input);
+    input = "0";
     op = opSign;
-    console.log(value1);
-    console.log(value2);
-    console.log(input);
   }
 }
 
 function clearCalc() {
   input = "0";
-  value1 = result;
-  value2 = 0;
-  op = null;
-  result = 0;
-  display.textContent = 0;
-  console.log(result);
-}
-
-function resetCalc() {
-  input = "0";
   value1 = 0;
   value2 = 0;
+  result = 0;
   op = null;
-  console.log(result);
-  console.log(op);
+  display.textContent = 0;
+}
+
+function useEqualSign() {
+  value2 = Number(input);
+  operate();
+  value1 = 0;
+  value2 = 0;
+  input = result;
 }
 
 function operate() {
-  value2 = Number(input.join(""));
-  console.log(input);
-  console.log(value2);
   switch (op) {
     case "+":
       result = value1 + value2;
       display.textContent = result;
-      console.log(result);
-      resetCalc();
       break;
     case "-":
       result = value1 - value2;
       display.textContent = result;
-      console.log(result);
-      resetCalc();
       break;
     case "/":
       result = value1 / value2;
       display.textContent = result;
-      console.log(result);
-      resetCalc();
       break;
     case "*":
       result = value1 * value2;
       display.textContent = result;
-      console.log(result);
-      resetCalc();
       break;
   }
 }
