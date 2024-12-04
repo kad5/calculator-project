@@ -69,7 +69,7 @@ function operate() {
     case "/":
       if (value2 === 0) {
         clearCalc();
-        alert("you can't divide by Zero");
+        alert("you can't divide by Zero"); // makes sure you can't divide by zero
       } else result = value1 / value2;
       break;
     case "*":
@@ -98,12 +98,17 @@ function useEqualSign() {
 function chooseOpSign(opSign) {
   if (op) {
     useEqualSign(); // calculates if an operator is selected while an equation is already open
-    value1 = Number(input); // locks the v1 as the input (the input pooled from the result of the previous equation)
-    op = opSign; // opens a new equation with the new operator selected
-    input = ""; // clears the input variable ready for v2 handling
+  }
+  value1 = Number(input); // locks the v1 as the input (the entered or that pooled from the result of prior equation)
+  op = opSign; // opens a new equation and selects the operator sign
+  input = ""; // clears the input variable ready for v2 handling
+}
+
+function backtrack() {
+  if (input.length < 2) {
+    clearCalc();
   } else {
-    value1 = Number(input); // locks the v1 as the input
-    op = opSign; // opens a new equation and selects the operator sign
-    input = ""; // clears the input variable ready for v2 handling
+    input = input.slice(0, -1);
+    displayNum();
   }
 }

@@ -18,14 +18,16 @@
   font-family: monospace;
   color: var(var(--font-clr));
 }
+
 .wrapper {
   height: 100vh;
   height: 100dvh;
   background-color: var(--main-BG-clr);
+  padding-inline: 5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: end;
   gap: 10px;
 }
 main {
@@ -47,10 +49,9 @@ main {
   display: flex;
   justify-content: end;
   align-items: center;
-  font-size: 5em;
+  font-size: 4vw;
   font-weight: 500;
-  line-height: 0.6;
-  padding-inline: 4px;
+  padding-inline: 0.5vw;
 }
 .btnA,
 .btnB,
@@ -68,6 +69,9 @@ main {
 }
 .btnB {
   background-color: var(--btn2-clr);
+}
+.btnB:active {
+  background-color: var(--btn2-clr-a);
 }
 .btnB-clicked {
   background-color: var(--btn2-clr-a);
