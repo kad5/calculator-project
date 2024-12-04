@@ -53,6 +53,17 @@ main {
   font-weight: 500;
   padding-inline: 0.5vw;
 }
+
+.opDisplay {
+  margin: 6px 10px;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 1.3em;
+}
+
 .util,
 .operator,
 .number {
