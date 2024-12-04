@@ -1,4 +1,5 @@
 const container = document.getElementById("container");
+const buttons = document.querySelectorAll("button");
 
 let input = "0";
 let value1 = 0;
@@ -88,7 +89,7 @@ function useEqualSign() {
     value2 = Number(input); // if operator was chosen and input for v2 was added after
   }
   operate();
-  input = result; // set the input to the result value to be ready for input to be added to it or used as is
+  input = result.toString(); // set the input to the result value to be ready for input to be added to it or used as is
   value1 = 0; // clean up
   value2 = 0; // clean up
   op = null; // make sure the operator has been deselected after completing the equation and closes the equation
@@ -105,6 +106,9 @@ function chooseOpSign(opSign) {
 }
 
 function backtrack() {
+  if (input === "") {
+    return;
+  }
   if (input.length < 2) {
     clearCalc();
   } else {
@@ -116,3 +120,34 @@ function backtrack() {
 function displayOpSing() {
   const opDisplay = document.querySelector;
 }
+
+buttons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (btn.classList.contains("number")) {
+      num = btn.textContent;
+      modifyInput(num);
+      return;
+    }
+    if (btn.classList.contains("js-operator")) {
+      sign = btn.textContent;
+      chooseOpSign(sign);
+      return;
+    }
+    if (btn.classList.contains("util") && btn.textContent === "AC") {
+      clearCalc();
+      return;
+    }
+    if (btn.classList.contains("util") && btn.textContent === "Del") {
+      backtrack();
+      return;
+    }
+    if (btn.classList.contains("util") && btn.textContent === "+/-") {
+      chooseSign();
+      return;
+    }
+    if (btn.classList.contains("js-equal")) {
+      useEqualSign();
+      return;
+    }
+  });
+});

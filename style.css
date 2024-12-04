@@ -53,33 +53,33 @@ main {
   font-weight: 500;
   padding-inline: 0.5vw;
 }
-.btnA,
-.btnB,
-.btnC {
+.util,
+.operator,
+.number {
   border: none;
   border-radius: 6px;
   font-size: 1.7em;
   cursor: pointer;
 }
-.btnA {
+.util {
   background-color: var(--btn1-clr);
 }
-.btnA:active {
+.util:active {
   background-color: var(--btn1-clr-a);
 }
-.btnB {
+.operator {
   background-color: var(--btn2-clr);
 }
-.btnB:active {
+.operator:active {
   background-color: var(--btn2-clr-a);
 }
-.btnB-clicked {
+.operator-clicked {
   background-color: var(--btn2-clr-a);
 }
-.btnC {
+.number {
   background-color: var(--btn3-clr);
 }
-.btnC:active {
+.number:active {
   background-color: var(--btn3-clr-a);
 }
 .zerobtn {
