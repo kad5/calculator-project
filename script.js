@@ -77,7 +77,7 @@ function backtrack() {
 }
 
 function chooseSign() {
-  if (input == "0") {
+  if (input == "0" || input === "") {
     return input === "0"; // checks first if the input is the string zero or is 0 and denies adjusting the sign if so
   } else if (input[0] !== "-") {
     input = "-" + input;
@@ -149,6 +149,17 @@ function operate() {
 function displayNum() {
   const display = document.getElementById("display");
   display.textContent = input; // makes the display show my input value. it is zero by default
+  if (input.length > 9) {
+    display.classList.add("small-text");
+    display.classList.remove("even-smaller-text");
+  }
+  if (input.length > 19) {
+    display.classList.add("even-smaller-text");
+  }
+  if (input.length < 10) {
+    display.classList.remove("small-text");
+    display.classList.remove("even-smaller-text");
+  }
 }
 
 function displayOpSign() {

@@ -1,28 +1,36 @@
 :root {
-  --main-BG-clr: rgb(240, 255, 255);
-  --boreder1-clr: rgb(47, 47, 47);
+  --main-BG-clr: hsl(48, 100%, 99%);
+  --boreder1-clr: hsl(0, 0%, 85%);
   --boreder2-clr: hsl(0, 0%, 0%);
-  --display-clr: rgb(178, 185, 183);
-  --btn1-clr: hsl(210, 100%, 56%);
-  --btn1-clr-a: hsl(210, 100%, 76%);
-  --btn2-clr: hsl(30, 100%, 56%);
-  --btn2-clr-a: hsl(30, 100%, 76%);
-  --btn3-clr: hsl(181, 58%, 31%);
-  --btn3-clr-a: hsl(181, 58%, 51%);
-  --font-clr: hsl(0, 0%, 0%);
+  --display-clr: hsl(0, 0%, 97%);
+
+  --btn1-clr: hsla(210, 76%, 29%, 0.25);
+  --btn1-clr-a: hsl(210, 100%, 76%, 0.8);
+
+  --btn2-clr: hsl(30, 100%, 56%, 0.15);
+  --btn2-clr-a: hsl(30, 100%, 76%, 0.7);
+
+  --btn3-clr: hsla(181, 58%, 31%, 0.1);
+  --btn3-clr-a: hsl(181, 58%, 51%, 0.5);
+
+  --font-clr: rgba(47, 47, 47, 0.85);
+
+  --shadow-top-clr: hsl(0, 12%, 90%);
+  --shadow-bot-clr: rgba(0, 0, 0, 0.1);
 }
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   font-family: monospace;
-  color: var(var(--font-clr));
+  color: var(--font-clr);
 }
 
 .page-wrapper {
+  background-color: var(--main-BG-clr);
   height: 100vh;
   height: 100dvh;
-  background-color: var(--main-BG-clr);
   padding-inline: 10%;
   display: flex;
   justify-content: space-between;
@@ -37,6 +45,7 @@
 
 .title > h1 {
   font-size: 3.5vw;
+  text-shadow: 1px 1px 10px var(--shadow-bot-clr);
 }
 
 .title ul {
@@ -56,26 +65,36 @@
   width: 30%;
 }
 main {
-  background-color: var(--boreder2-clr);
+  background-color: var(--display-clr);
   aspect-ratio: 0.65;
-  border: 10px solid var(--boreder1-clr);
-  border-radius: 5px;
+  padding: 15px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
+  grid-template-rows: 15vh repeat(5, auto);
+  gap: 10px;
+  border: 1px solid var(--boreder1-clr);
+  border-radius: 5px;
+  box-shadow: 4px 4px 10px var(--shadow-bot-clr),
+    inset 0px 0px 40px var(--shadow-top-clr);
 }
 
 .display {
-  background-color: var(--display-clr);
+  padding-inline: 0.5vw;
   grid-column: 1 / 5;
   grid-row: 1 / 2;
-  border: 5px solid var(--boreder2-clr);
   display: flex;
   justify-content: end;
   align-items: center;
   font-size: 4vw;
   font-weight: 500;
-  padding-inline: 0.5vw;
+  text-shadow: 1px 1px 10px var(--shadow-bot-clr);
+}
+
+.small-text {
+  font-size: 2vw;
+}
+.even-smaller-text {
+  font-size: 1vw;
 }
 
 .opDisplay {
@@ -92,29 +111,32 @@ main {
 .operator,
 .number {
   border: none;
-  border-radius: 6px;
+  border-radius: 2em;
   font-size: 1.7em;
   cursor: pointer;
+  box-shadow: 4px 4px 10px var(--shadow-bot-clr),
+    inset 0px 0px 20px var(--shadow-top-clr);
 }
 .util {
   background-color: var(--btn1-clr);
 }
-.util:active {
+.util:active,
+.util:hover {
   background-color: var(--btn1-clr-a);
 }
 .operator {
   background-color: var(--btn2-clr);
 }
-.operator:active {
+.operator:active,
+.operator:hover {
   background-color: var(--btn2-clr-a);
 }
-.operator-clicked {
-  background-color: var(--btn2-clr-a);
-}
+
 .number {
   background-color: var(--btn3-clr);
 }
-.number:active {
+.number:active,
+.number:hover {
   background-color: var(--btn3-clr-a);
 }
 .zerobtn {
